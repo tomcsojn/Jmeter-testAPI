@@ -66,7 +66,7 @@ def wait():
 @app.route("/csv")
 def getCsv():
     
-    df = pd.DataFrame(np.random.randint(0,10000,size=(100,100)))
+    df = pd.DataFrame(np.random.randint(0,10000,size=(1000,1000)))
 
     return Response(df.to_csv(),mimetype="text/csv",headers={"Content-disposition":"attachment; filename=myname.csv"})
 
