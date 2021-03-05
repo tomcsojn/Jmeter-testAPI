@@ -9,6 +9,7 @@ from flask import Flask,request,jsonify,abort,Response
 from time import sleep
 import pandas as pd
 import numpy as np
+from random import randint
 # import json
 # %%init
 app = Flask(__name__)
@@ -20,6 +21,8 @@ app = Flask(__name__)
 @app.route("/getjson")
 def returnjson():
     # return jsonify(data=x)
+    rn = randint(0,4)
+    if rn == 0: abort(500,description="Random abort")
     x = {
 	"items":
 		{
